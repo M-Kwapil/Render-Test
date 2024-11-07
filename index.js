@@ -4,32 +4,10 @@ const app = express()
 
 const Note = require('./models/note')
 
+app.use(express.static('dist'))
 app.use(express.json())
 app.use(cors())
 
-let notes = [  {    
-        id: "1",    
-        content: "HTML is easy",    
-        important: true  
-    },  
-    {    
-        id: "2",    
-        content: "Browser can execute only JavaScript",    
-        important: false  
-    },  
-    {    
-        id: "3",    
-        content: "GET and POST are the most important methods of HTTP protocol",    
-        important: true  
-    }]
-
-const generateId = () => {
-    const maxId = notes.length > 0
-        ? Math.max(...notes.map(n => Number(n.id)))
-        : 0
-    return String(maxId + 1)
-
-}
 
 app.get('/', (request, response) => {
     response.send('<h1>Hello World!</h1>')
