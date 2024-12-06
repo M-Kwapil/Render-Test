@@ -4,17 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:ui": "shx rm -rf dist && cd C:\\VSCode\\FullStackOpen\\Examples\\part2Example && npm run build && shx cp -r dist C:\\VSCode\\FullStackOpen\\Examples\\part3Example",
+    "dev": "nodemon index.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "Maison Kwapil",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.7.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "@eslint/js": "^9.16.0",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "nodemon": "^3.1.4",
+    "shx": "^0.3.4"
   }
 }
